@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+  var currentLang = 'fr';
+
   // i18n : détection langue navigateur + sélecteur manuel mémorisé
   (function () {
     var SUPPORTED = Object.keys(LINEA_I18N);
@@ -30,6 +32,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (dict[key]) el.textContent = dict[key];
       });
 
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-placeholder');
+        if (dict[key]) el.setAttribute('placeholder', dict[key]);
+      });
+
+      currentLang = lang;
       if (select) select.value = lang;
     }
 
@@ -77,5 +85,16 @@ document.addEventListener('DOMContentLoaded', function () {
       value = Math.min(RANGE_MAX, Math.max(RANGE_MIN, value));
       render();
     }, 45);
+  }
+
+  // confirmation visuelle à l'envoi (la vraie soumission part vers Brevo, target="_blank")
+  var form = document.getElementById('newsletter-form');
+  var status = document.getElementById('form-status');
+  if (form && status) {
+    form.addEventListener('submit', function () {
+      var dict = LINEA_I18N[currentLang] || LINEA_I18N.en;
+      status.textContent = dict.formStatusSuccess;
+      status.className = 'form-status success';
+    });
   }
 });

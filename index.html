@@ -106,15 +106,25 @@
         Le formulaire ci-dessous est pour l'instant disponible en français uniquement.
       </p>
 
-      <div class="newsletter-embed">
-        <iframe
-          src="https://59cc30a0.sibforms.com/v2/serve/MUIFAF-LsnewpFAObMiCZ3gve8KaoGzIlrAi72CEp0Tkoy925Xzh56zH6cDVbEn5u8NYRxBTlUUU7kgsd_hCZf-3Bsye7ismsY7yJPiryoLVT09F8m4sjD9jbskvyX1f1M5f0I_NzLSBUnzZqS-ENnyzqrDjjVGUgtl_M9eQAiw5yVjOjc2A6NjN0qiJR_l3wSuzVhYQgLF6EeLZ4A=="
-          frameborder="0"
-          scrolling="no"
-          allowfullscreen
-          title="Inscription newsletter LINEA"
-        ></iframe>
-      </div>
+      <form
+        id="newsletter-form"
+        class="newsletter-form"
+        method="POST"
+        action="https://59cc30a0.sibforms.com/serve/MUIFAF-LsnewpFAObMiCZ3gve8KaoGzIlrAi72CEp0Tkoy925Xzh56zH6cDVbEn5u8NYRxBTlUUU7kgsd_hCZf-3Bsye7ismsY7yJPiryoLVT09F8m4sjD9jbskvyX1f1M5f0I_NzLSBUnzZqS-ENnyzqrDjjVGUgtl_M9eQAiw5yVjOjc2A6NjN0qiJR_l3wSuzVhYQgLF6EeLZ4A=="
+        target="_blank"
+        novalidate
+      >
+        <div class="form-row">
+          <input type="email" name="EMAIL" id="EMAIL" data-i18n-placeholder="emailPlaceholder" placeholder="Ton email" required autocomplete="email">
+        </div>
+        <!-- anti-bot Brevo : doit rester vide -->
+        <div class="honeypot" aria-hidden="true">
+          <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off">
+        </div>
+        <input type="hidden" name="locale" value="fr">
+        <button type="submit" class="btn btn-primary btn-full" data-i18n="formSubmit">S'inscrire</button>
+      </form>
+      <p id="form-status" class="form-status" role="status"></p>
     </div>
   </section>
 

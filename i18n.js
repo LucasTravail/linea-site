@@ -15,7 +15,10 @@ var LINEA_I18N = {
     feature3Desc: "Entraxe, usinage, contrôle qualité : directement sur l'appareil.",
     newsletterTitle: "Sois prévenu dès que c'est dispo",
     newsletterLead: "Quelques infos rapides, pas de spam, juste l'essentiel au bon moment.",
-    newsletterNote: "Le formulaire ci-dessous est pour l'instant disponible en français uniquement.",
+    newsletterNote: "La confirmation après inscription s'affiche en français.",
+    emailPlaceholder: "Ton email",
+    formSubmit: "S'inscrire",
+    formStatusSuccess: "Merci ! Un nouvel onglet va s'ouvrir pour confirmer ton inscription.",
     footerText: "LINEA — projet en développement"
   },
   en: {
@@ -34,7 +37,10 @@ var LINEA_I18N = {
     feature3Desc: "Center distance, machining, quality control: right on the device.",
     newsletterTitle: "Get notified the moment it's ready",
     newsletterLead: "A few quick details, no spam, just what matters when it matters.",
-    newsletterNote: "The form below is currently available in French only.",
+    newsletterNote: "The confirmation after signing up is shown in French.",
+    emailPlaceholder: "Your email",
+    formSubmit: "Subscribe",
+    formStatusSuccess: "Thanks! A new tab will open to confirm your subscription.",
     footerText: "LINEA — project in development"
   },
   de: {
@@ -53,7 +59,10 @@ var LINEA_I18N = {
     feature3Desc: "Achsabstand, Bearbeitung, Qualitätskontrolle: direkt am Gerät.",
     newsletterTitle: "Erfahre es sofort, wenn es verfügbar ist",
     newsletterLead: "Ein paar kurze Angaben, kein Spam, nur das Wichtigste zur richtigen Zeit.",
-    newsletterNote: "Das Formular unten ist derzeit nur auf Französisch verfügbar.",
+    newsletterNote: "Die Bestätigung nach der Anmeldung wird auf Französisch angezeigt.",
+    emailPlaceholder: "Deine E-Mail",
+    formSubmit: "Anmelden",
+    formStatusSuccess: "Danke! Ein neuer Tab öffnet sich, um deine Anmeldung zu bestätigen.",
     footerText: "LINEA — Projekt in Entwicklung"
   },
   es: {
@@ -72,7 +81,10 @@ var LINEA_I18N = {
     feature3Desc: "Entre ejes, mecanizado, control de calidad: directo en el aparato.",
     newsletterTitle: "Entérate en cuanto esté disponible",
     newsletterLead: "Unos datos rápidos, sin spam, solo lo esencial en el momento justo.",
-    newsletterNote: "El formulario de abajo está disponible por ahora solo en francés.",
+    newsletterNote: "La confirmación tras registrarte se muestra en francés.",
+    emailPlaceholder: "Tu email",
+    formSubmit: "Suscribirme",
+    formStatusSuccess: "¡Gracias! Se abrirá una nueva pestaña para confirmar tu inscripción.",
     footerText: "LINEA — proyecto en desarrollo"
   },
   it: {
@@ -91,7 +103,10 @@ var LINEA_I18N = {
     feature3Desc: "Interasse, lavorazione, controllo qualità: direttamente sul dispositivo.",
     newsletterTitle: "Sarai avvisato appena è pronto",
     newsletterLead: "Qualche informazione veloce, niente spam, solo l'essenziale al momento giusto.",
-    newsletterNote: "Il modulo qui sotto è per ora disponibile solo in francese.",
+    newsletterNote: "La conferma dopo l'iscrizione viene mostrata in francese.",
+    emailPlaceholder: "La tua email",
+    formSubmit: "Iscrivimi",
+    formStatusSuccess: "Grazie! Si aprirà una nuova scheda per confermare la tua iscrizione.",
     footerText: "LINEA — progetto in sviluppo"
   },
   pl: {
@@ -110,7 +125,10 @@ var LINEA_I18N = {
     feature3Desc: "Rozstaw osi, obróbka, kontrola jakości — bezpośrednio na urządzeniu.",
     newsletterTitle: "Dowiedz się, gdy tylko będzie dostępne",
     newsletterLead: "Kilka szybkich informacji, żadnego spamu, tylko to co ważne we właściwym momencie.",
-    newsletterNote: "Poniższy formularz jest obecnie dostępny tylko w języku francuskim.",
+    newsletterNote: "Potwierdzenie po zapisaniu się wyświetla się w języku francuskim.",
+    emailPlaceholder: "Twój e-mail",
+    formSubmit: "Zapisz się",
+    formStatusSuccess: "Dzięki! Otworzy się nowa karta, aby potwierdzić zapis.",
     footerText: "LINEA — projekt w trakcie tworzenia"
   },
   ro: {
@@ -129,7 +147,10 @@ var LINEA_I18N = {
     feature3Desc: "Distanță dintre axe, prelucrare, control calitate: direct pe aparat.",
     newsletterTitle: "Fii anunțat imediat ce e disponibil",
     newsletterLead: "Câteva informații rapide, fără spam, doar esențialul la momentul potrivit.",
-    newsletterNote: "Formularul de mai jos este momentan disponibil doar în franceză.",
+    newsletterNote: "Confirmarea după înscriere este afișată în franceză.",
+    emailPlaceholder: "Emailul tău",
+    formSubmit: "Abonează-te",
+    formStatusSuccess: "Mulțumim! Se va deschide o filă nouă pentru a confirma înscrierea.",
     footerText: "LINEA — proiect în dezvoltare"
   },
   ru: {
@@ -148,7 +169,10 @@ var LINEA_I18N = {
     feature3Desc: "Межосевое расстояние, обработка, контроль качества — прямо на устройстве.",
     newsletterTitle: "Узнайте первыми о запуске",
     newsletterLead: "Немного информации, без спама — только важное и вовремя.",
-    newsletterNote: "Форма ниже пока доступна только на французском языке.",
+    newsletterNote: "Подтверждение после подписки отображается на французском языке.",
+    emailPlaceholder: "Твой email",
+    formSubmit: "Подписаться",
+    formStatusSuccess: "Спасибо! Откроется новая вкладка для подтверждения подписки.",
     footerText: "LINEA — проект в разработке"
   }
 };
