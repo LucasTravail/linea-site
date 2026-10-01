@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LINEA — Pied à coulisse connecté</title>
+<meta name="description" content="Pied à coulisse connecté avec écran AMOLED rond et mesure haute précision. Inscrivez-vous pour être parmi les premiers informés.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--
+  ============================================================
+  PLACEHOLDERS A REMPLACER AVANT MISE EN LIGNE :
+  1. Image hero (.hero-visual) -> vraie photo/render du pied à coulisse
+  2. Formulaire newsletter (#newsletter-form) -> action="" et les champs
+     cachés (u=, id=) doivent venir de ton vrai formulaire Mailchimp/Brevo
+     intégré. Va dans Mailchimp > Audience > Signup forms > Embedded form,
+     copie le <form> généré et remplace le bloc marqué ci-dessous.
+  3. Lien TikTok dans le footer -> ton vrai @handle
+  ============================================================
+-->
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <span class="logo">
+      <svg class="logo-mark" viewBox="0 0 5.7 4" aria-hidden="true">
+        <path d="M 0,0 H 5.7 L 4.8,0.8 H 0.9 Z" class="logo-mark-a"/>
+        <path d="m 0.9,1.6 h 4 L 4.1,2.4 h -4 z" class="logo-mark-b"/>
+        <path d="M 0,3.2 H 5.7 L 4.8,4 H 0.9 Z" class="logo-mark-a"/>
+      </svg>
+      LINEA
+    </span>
+    <a href="#newsletter" class="btn btn-small">Être informé</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">En développement</p>
+        <h1>Le pied à coulisse qui lit la mesure pour vous.</h1>
+        <p class="lead">
+          Écran AMOLED rond, mesure encodeur magnétique haute précision,
+          lecture instantanée. Pensé pour l'atelier, pas pour le labo.
+        </p>
+        <a href="#newsletter" class="btn btn-primary">Je veux être prévenu au lancement</a>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <!-- placeholder visuel : remplacer par une vraie photo/render -->
+        <div class="device-mock">
+          <svg class="device-ring" viewBox="0 0 100 100">
+            <circle class="device-ring-arc" id="device-ring-arc" cx="50" cy="50" r="44"/>
+          </svg>
+          <div class="device-screen">
+            <span class="device-reading" id="device-reading">14.33</span>
+            <span class="device-unit">mm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="wrap">
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">◎</div>
+          <h3>Précision encodeur magnétique</h3>
+          <p>Mesure stable et répétable, sans dérive mécanique dans le temps.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">●</div>
+          <h3>Écran AMOLED rond tactile</h3>
+          <p>Lecture nette en un coup d'œil, même les mains sales.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">▣</div>
+          <h3>Fonctions métier intégrées</h3>
+          <p>Entraxe, usinage, contrôle qualité : directement sur l'appareil.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="newsletter">
+    <div class="wrap newsletter-inner">
+      <h2>Sois prévenu dès que c'est dispo</h2>
+      <p class="lead">
+        Quelques infos rapides, pas de spam, juste l'essentiel au bon moment.
+      </p>
+
+      <!--
+        BLOC A REMPLACER PAR TON VRAI FORMULAIRE MAILCHIMP/BREVO.
+        Garde les attributs id/name actuels si tu veux garder script.js
+        tel quel, ou adapte script.js aux noms de champs générés par
+        Mailchimp (souvent un champ caché anti-bot avec un nom aléatoire :
+        NE JAMAIS lui donner de valeur, le laisser vide).
+      -->
+      <form id="newsletter-form" class="newsletter-form" action="REMPLACE_PAR_URL_MAILCHIMP" method="post" target="_blank" novalidate>
+        <div class="form-row">
+          <input type="text" name="FNAME" id="fname" placeholder="Prénom (optionnel)" autocomplete="given-name">
+        </div>
+        <div class="form-row">
+          <input type="email" name="EMAIL" id="email" placeholder="Ton email" required autocomplete="email">
+        </div>
+        <div class="form-row">
+          <select name="SECTOR" id="sector">
+            <option value="">Tu travailles plutôt en... (optionnel)</option>
+            <option value="mecanique">Mécanique / usinage</option>
+            <option value="menuiserie">Menuiserie / bois</option>
+            <option value="metal">Métallerie / chaudronnerie</option>
+            <option value="electro">Électronique</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <!-- champ anti-bot : laisser vide, Mailchimp fournit le vrai nom -->
+        <div class="honeypot" aria-hidden="true">
+          <input type="text" name="b_honeypot" tabindex="-1" autocomplete="off">
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">S'inscrire</button>
+      </form>
+      <p id="form-status" class="form-status" role="status"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>LINEA — projet en développement</span>
+    <a href="https://www.tiktok.com/@TON_HANDLE" target="_blank" rel="noopener">TikTok</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
