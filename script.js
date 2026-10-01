@@ -32,23 +32,4 @@ document.addEventListener('DOMContentLoaded', function () {
       render();
     }, 45);
   }
-
-  var form = document.getElementById('newsletter-form');
-  var status = document.getElementById('form-status');
-  if (!form || !status) return;
-
-  form.addEventListener('submit', function (e) {
-    var actionUrl = form.getAttribute('action') || '';
-
-    if (actionUrl.indexOf('REMPLACE_PAR_URL_MAILCHIMP') !== -1) {
-      e.preventDefault();
-      status.textContent = "Formulaire pas encore branché : remplace l'attribut action du <form> par ton URL Mailchimp/Brevo (voir commentaires dans index.html).";
-      status.className = 'form-status error';
-      return;
-    }
-
-    status.textContent = 'Merci ! Un nouvel onglet va s\'ouvrir pour confirmer ton inscription.';
-    status.className = 'form-status success';
-    // la soumission réelle part vers Mailchimp/Brevo (target="_blank" dans le <form>)
-  });
 });
