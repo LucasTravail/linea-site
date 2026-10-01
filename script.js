@@ -1,4 +1,50 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // i18n : détection langue navigateur + sélecteur manuel mémorisé
+  (function () {
+    var SUPPORTED = Object.keys(LINEA_I18N);
+    var STORAGE_KEY = 'linea-lang';
+    var select = document.getElementById('lang-switcher');
+
+    function detectLang() {
+      var saved = null;
+      try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+      if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
+
+      var browserLangs = navigator.languages || [navigator.language || 'fr'];
+      for (var i = 0; i < browserLangs.length; i++) {
+        var code = (browserLangs[i] || '').slice(0, 2).toLowerCase();
+        if (SUPPORTED.indexOf(code) !== -1) return code;
+      }
+      return 'en';
+    }
+
+    function applyLang(lang) {
+      var dict = LINEA_I18N[lang] || LINEA_I18N.en;
+      document.documentElement.setAttribute('lang', lang);
+      document.title = dict.title;
+      var metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', dict.metaDescription);
+
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n');
+        if (dict[key]) el.textContent = dict[key];
+      });
+
+      if (select) select.value = lang;
+    }
+
+    var lang = detectLang();
+    applyLang(lang);
+
+    if (select) {
+      select.addEventListener('change', function () {
+        var chosen = select.value;
+        try { localStorage.setItem(STORAGE_KEY, chosen); } catch (e) {}
+        applyLang(chosen);
+      });
+    }
+  })();
+
   // simule une mesure "live" sur l'écran rond du hero : défilement continu + anneau synchro
   var reading = document.getElementById('device-reading');
   var arc = document.getElementById('device-ring-arc');

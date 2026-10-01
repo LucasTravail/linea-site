@@ -27,7 +27,19 @@
       </svg>
       LINEA
     </span>
-    <a href="#newsletter" class="btn btn-small">Être informé</a>
+    <div class="topbar-actions">
+      <select id="lang-switcher" class="lang-switcher" aria-label="Langue / Language">
+        <option value="fr">FR</option>
+        <option value="en">EN</option>
+        <option value="de">DE</option>
+        <option value="es">ES</option>
+        <option value="it">IT</option>
+        <option value="pl">PL</option>
+        <option value="ro">RO</option>
+        <option value="ru">RU</option>
+      </select>
+      <a href="#newsletter" class="btn btn-small" data-i18n="navCta">Être informé</a>
+    </div>
   </div>
 </header>
 
@@ -37,13 +49,13 @@
   <section class="hero">
     <div class="wrap hero-inner">
       <div class="hero-text">
-        <p class="eyebrow">En développement</p>
-        <h1>Le pied à coulisse qui lit la mesure pour vous.</h1>
-        <p class="lead">
+        <p class="eyebrow" data-i18n="eyebrow">En développement</p>
+        <h1 data-i18n="heroTitle">Le pied à coulisse qui lit la mesure pour vous.</h1>
+        <p class="lead" data-i18n="heroLead">
           Écran AMOLED rond, mesure encodeur magnétique haute précision,
           lecture instantanée. Pensé pour l'atelier, pas pour le labo.
         </p>
-        <a href="#newsletter" class="btn btn-primary">Je veux être prévenu au lancement</a>
+        <a href="#newsletter" class="btn btn-primary" data-i18n="heroCta">Je veux être prévenu au lancement</a>
       </div>
       <div class="hero-visual" aria-hidden="true">
         <!-- placeholder visuel : remplacer par une vraie photo/render -->
@@ -66,18 +78,18 @@
       <div class="feature-grid">
         <div class="feature-card">
           <div class="feature-icon">◎</div>
-          <h3>Précision encodeur magnétique</h3>
-          <p>Mesure stable et répétable, sans dérive mécanique dans le temps.</p>
+          <h3 data-i18n="feature1Title">Précision encodeur magnétique</h3>
+          <p data-i18n="feature1Desc">Mesure stable et répétable, sans dérive mécanique dans le temps.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">●</div>
-          <h3>Écran AMOLED rond tactile</h3>
-          <p>Lecture nette en un coup d'œil, même les mains sales.</p>
+          <h3 data-i18n="feature2Title">Écran AMOLED rond tactile</h3>
+          <p data-i18n="feature2Desc">Lecture nette en un coup d'œil, même les mains sales.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">▣</div>
-          <h3>Fonctions métier intégrées</h3>
-          <p>Entraxe, usinage, contrôle qualité : directement sur l'appareil.</p>
+          <h3 data-i18n="feature3Title">Fonctions métier intégrées</h3>
+          <p data-i18n="feature3Desc">Entraxe, usinage, contrôle qualité : directement sur l'appareil.</p>
         </div>
       </div>
     </div>
@@ -86,16 +98,19 @@
   <!-- NEWSLETTER -->
   <section class="newsletter" id="newsletter">
     <div class="wrap newsletter-inner">
-      <h2>Sois prévenu dès que c'est dispo</h2>
-      <p class="lead">
+      <h2 data-i18n="newsletterTitle">Sois prévenu dès que c'est dispo</h2>
+      <p class="lead" data-i18n="newsletterLead">
         Quelques infos rapides, pas de spam, juste l'essentiel au bon moment.
+      </p>
+      <p class="newsletter-note" data-i18n="newsletterNote">
+        Le formulaire ci-dessous est pour l'instant disponible en français uniquement.
       </p>
 
       <div class="newsletter-embed">
         <iframe
           src="https://59cc30a0.sibforms.com/v2/serve/MUIFAF-LsnewpFAObMiCZ3gve8KaoGzIlrAi72CEp0Tkoy925Xzh56zH6cDVbEn5u8NYRxBTlUUU7kgsd_hCZf-3Bsye7ismsY7yJPiryoLVT09F8m4sjD9jbskvyX1f1M5f0I_NzLSBUnzZqS-ENnyzqrDjjVGUgtl_M9eQAiw5yVjOjc2A6NjN0qiJR_l3wSuzVhYQgLF6EeLZ4A=="
           frameborder="0"
-          scrolling="auto"
+          scrolling="no"
           allowfullscreen
           title="Inscription newsletter LINEA"
         ></iframe>
@@ -107,11 +122,12 @@
 
 <footer class="footer">
   <div class="wrap footer-inner">
-    <span>LINEA — projet en développement</span>
+    <span data-i18n="footerText">LINEA — projet en développement</span>
     <a href="https://www.tiktok.com/@lucas.travail" target="_blank" rel="noopener">TikTok</a>
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
