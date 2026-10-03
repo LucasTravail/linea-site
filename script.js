@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  var currentLang = 'fr';
-
   // i18n : détection langue navigateur + sélecteur manuel mémorisé
   (function () {
     var SUPPORTED = Object.keys(LINEA_I18N);
@@ -37,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (dict[key]) el.setAttribute('placeholder', dict[key]);
       });
 
-      currentLang = lang;
       if (select) select.value = lang;
     }
 
@@ -87,14 +84,35 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 45);
   }
 
-  // confirmation visuelle à l'envoi (la vraie soumission part vers Brevo, target="_blank")
+  // popup de remerciement à l'envoi (la vraie soumission part en arrière-plan vers Brevo)
   var form = document.getElementById('newsletter-form');
-  var status = document.getElementById('form-status');
-  if (form && status) {
+  var modal = document.getElementById('thanks-modal');
+  var modalClose = document.getElementById('modal-close');
+
+  function openModal() {
+    if (!modal) return;
+    modal.removeAttribute('hidden');
+    var autoClose = setTimeout(closeModal, 6000);
+    modal.dataset.autoCloseId = autoClose;
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    if (modal.dataset.autoCloseId) clearTimeout(Number(modal.dataset.autoCloseId));
+    modal.setAttribute('hidden', '');
+  }
+
+  if (form && modal) {
     form.addEventListener('submit', function () {
-      var dict = LINEA_I18N[currentLang] || LINEA_I18N.en;
-      status.textContent = dict.formStatusSuccess;
-      status.className = 'form-status success';
+      openModal();
+      form.reset();
+    });
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
     });
   }
 });

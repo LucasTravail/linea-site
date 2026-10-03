@@ -102,16 +102,12 @@
       <p class="lead" data-i18n="newsletterLead">
         Quelques infos rapides, pas de spam, juste l'essentiel au bon moment.
       </p>
-      <p class="newsletter-note" data-i18n="newsletterNote">
-        Le formulaire ci-dessous est pour l'instant disponible en français uniquement.
-      </p>
-
       <form
         id="newsletter-form"
         class="newsletter-form"
         method="POST"
         action="https://59cc30a0.sibforms.com/serve/MUIFAF-LsnewpFAObMiCZ3gve8KaoGzIlrAi72CEp0Tkoy925Xzh56zH6cDVbEn5u8NYRxBTlUUU7kgsd_hCZf-3Bsye7ismsY7yJPiryoLVT09F8m4sjD9jbskvyX1f1M5f0I_NzLSBUnzZqS-ENnyzqrDjjVGUgtl_M9eQAiw5yVjOjc2A6NjN0qiJR_l3wSuzVhYQgLF6EeLZ4A=="
-        target="_blank"
+        target="newsletter-submit-target"
         novalidate
       >
         <div class="form-row">
@@ -124,9 +120,20 @@
         <input type="hidden" name="locale" value="fr">
         <button type="submit" class="btn btn-primary btn-full" data-i18n="formSubmit">S'inscrire</button>
       </form>
-      <p id="form-status" class="form-status" role="status"></p>
+      <!-- cible cachée : la réponse (mal stylée) de Brevo s'y charge sans jamais s'afficher -->
+      <iframe name="newsletter-submit-target" class="newsletter-submit-sink" aria-hidden="true" tabindex="-1"></iframe>
     </div>
   </section>
+
+  <!-- POPUP DE REMERCIEMENT -->
+  <div id="thanks-modal" class="modal-overlay" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button type="button" id="modal-close" class="modal-close" aria-label="Fermer">&times;</button>
+      <div class="modal-icon">✓</div>
+      <h3 id="modal-title" data-i18n="modalTitle">Merci !</h3>
+      <p data-i18n="modalText">Tu seras informé(e) dès que LINEA sera disponible.</p>
+    </div>
+  </div>
 
 </main>
 
